@@ -1,5 +1,5 @@
-SMS-Spammer-Android
+SMS-Spammer-Plus
 ===================
 
-SMS Spamming app for android - for educational purpose only. 
+SMS Spamming app for Android for educational purpose only. 
 
