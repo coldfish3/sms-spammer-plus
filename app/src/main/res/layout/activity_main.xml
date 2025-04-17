@@ -1,101 +1,119 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/phoneNumberContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/phoneNumberEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Phone Number"
+            android:inputType="phone" />
+
+        <ImageButton
+            android:id="@+id/contactPickerButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Pick Contact"
+            android:src="@drawable/ic_contact" />
+    </LinearLayout>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/messageCountEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:id="@+id/txtPhoneNb"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/btnContactPicker"
-        android:hint="@string/phoneNbHint"
-        android:layout_toStartOf="@+id/btnContactPicker" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/messageHint"
-        android:id="@+id/txtMessage"
-        android:layout_below="@+id/txtPhoneNb"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/contacts"
-        android:id="@+id/btnContactPicker"
-        android:layout_above="@+id/txtMessage"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/startButtonLbl"
-        android:id="@+id/btnStart"
-        android:layout_below="@+id/txtAmmountOfMessages"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/btnStop"
-        android:layout_alignEnd="@+id/btnStop" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btnStopLbl"
-        android:id="@+id/btnStop"
-        android:layout_below="@+id/btnStart"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/btnContactPicker"
-        android:layout_alignEnd="@+id/btnContactPicker" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/txtAnAppBy"
-        android:id="@+id/textView"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/btnContactPicker"
-        android:layout_alignEnd="@+id/btnContactPicker" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/txtMessages"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnStop"
-        android:layout_alignRight="@+id/btnStop"
-        android:layout_alignEnd="@+id/btnStop" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Number of messages (0 = infinite)"
         android:inputType="number"
-        android:ems="10"
-        android:hint="@string/ammountOfMessages"
-        android:id="@+id/txtAmmountOfMessages"
-        android:layout_below="@+id/txtMessage"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/txtMessage"
-        android:layout_alignEnd="@+id/txtMessage" />
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberContainer" />
 
-</RelativeLayout>
+    <EditText
+        android:id="@+id/messageEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Message"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        app:layout_constraintTop_toBottomOf="@id/messageCountEditText" />
+
+    <TextView
+        android:id="@+id/txtMessages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceBody1"
+        app:layout_constraintTop_toBottomOf="@id/messageEditText" />
+
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/txtMessages">
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="Send" />
+
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="Stop" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/permissionWarningText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/permission_warning"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/buttonContainer" />
+
+    <TextView
+        android:id="@+id/smsLimitWarningText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/sms_limit_warning"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/permissionWarningText" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

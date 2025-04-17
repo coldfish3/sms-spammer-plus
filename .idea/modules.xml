@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SMS-Spammer-Android.iml" filepath="$PROJECT_DIR$/SMS-Spammer-Android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SMSSpammer.iml" filepath="$PROJECT_DIR$/SMSSpammer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SMS-Spammer-Plus.iml" filepath="$PROJECT_DIR$/.idea/modules/SMS-Spammer-Plus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SMS-Spammer-Plus.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SMS-Spammer-Plus.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SMS-Spammer-Plus.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SMS-Spammer-Plus.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SMS-Spammer-Plus.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SMS-Spammer-Plus.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SMS-Spammer-Plus.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SMS-Spammer-Plus.app.unitTest.iml" />
     </modules>
   </component>
 </project>
-
